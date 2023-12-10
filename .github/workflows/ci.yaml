@@ -64,7 +64,7 @@ jobs:
         id: restore-google-json
         run: |
           mkdir -p ./test/credencials
-          echo "${{ secrets.GOOGLE_AUTH_JSON }}" | base64 --decode > ./test/credencials/auth.json
+          echo '${{ secrets.GOOGLE_AUTH_JSON }}' | base64 --decode > ./test/credencials/auth.json
 
       - name: Check for E2E
         id: check-for-e2e
