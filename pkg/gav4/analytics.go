@@ -162,7 +162,7 @@ func (ga *GoogleAnalytics) CheckHealth(ctx context.Context, config *setting.Data
 
 	client, err := NewGoogleClient(ctx, config.JWT)
 	if err != nil {
-		log.DefaultLogger.Error("CheckHealth: Fail NewGoogleClient", "error", err.Error(), "detail", config.JWT)
+		log.DefaultLogger.Error("CheckHealth: Fail NewGoogleClient", "error", config.JWT)
 		return &backend.CheckHealthResult{
 			Status:  backend.HealthStatusError,
 			Message: "CheckHealth: Fail NewGoogleClient" + err.Error(),
